@@ -1,3 +1,5 @@
+// settings.scss, w którym znajdują się zmienne (i ew. mixiny),
+
 $color-light: #fff;
 $color-dark: #2f3542;
 $color-success: #26de81;
@@ -8,3 +10,13 @@ $font-text: 'Poppins', sans-serif;
 $radius: 5px;
 $base-size: 12px;
 $transition: all 0.5s;
+
+
+
+
+// Plik settings.scss nie może zawierać żadnych styli! Mogą znajdować się w nim wyłącznie wyrażenia Sass, które nie renderują styli. 
+// Innymi słowy, możesz umieszczać w tym pliku wyłącznie zmienne i mixiny.
+// Wynika to z konstrukcji projektu reactowego – kod SCSS nie stanowi jednej całości, 
+// a każdy plik .scss danego komponentu jest renderowany osobno. Każdy z nich importuje też plik settings.scss, 
+// aby możliwe było używanie zmiennych i mixinów. Wobec tego, gdybyśmy umieścili jakieś style w tym pliku, zostałyby one wstawione wielokrotnie 
+// (raz dla każdego komponentu).

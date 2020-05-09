@@ -1,3 +1,4 @@
+// dane źródłowe, na podstawie których będziemy wyświetlać komponenty na stronie
 export const settings = {
   columnCreatorText: 'Add new column',
   cardCreatorText: 'Add new card',

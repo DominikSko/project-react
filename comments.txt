@@ -1,0 +1,1 @@
+Jeœli zajrzysz do pliku package.json, zobaczysz parametr --mode, wykorzystywany w taskach start i build. To w³aœnie za pomoc¹ tego parametru wybieramy, która konfiguracja zostanie u¿yta przez webpacka.
