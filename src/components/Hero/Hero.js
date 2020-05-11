@@ -8,7 +8,7 @@ const Hero = props => (
         <img className={styles.image} src={props.spaceImage}></img>
     </header>
 );
-Hero.PropTypes = {         // PropTypes w komponencie funkcyjnym
+Hero.propTypes = {         // PropTypes w komponencie funkcyjnym
     titleText: PropTypes.node.isRequired,  // typy wlasciwosci https://reactjs.org/docs/typechecking-with-proptypes.html
 };
 

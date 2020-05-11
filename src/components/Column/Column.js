@@ -3,8 +3,8 @@ import styles from './Column.scss';  // do omówienia
 import PropTypes from 'prop-types';  // do omowienia
 
 class Column extends React.Component {
-    static PropTypes = {
-        columnTitle: PropTypes.string, 
+    static propTypes = {
+        columnTitle: PropTypes.string.isRequired, 
     }
 
     render() {
