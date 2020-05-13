@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';  // typy wartości w propsach, properties, t
 import Column from '../Column/Column.js';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
+import Creator from '../Creator/Creator.js';
 
 class List extends React.Component {  // dziedziczy ona z klasy React.Component
   state = {
@@ -21,6 +22,22 @@ class List extends React.Component {  // dziedziczy ona z klasy React.Component
     description: settings.defaultListDescription,
   }
 
+  addColumn(title){   // "dodaj do this.state.columns nowy obiekt, do omówienia
+    this.setState(state => (
+      {
+        columns: [
+          ...state.columns,  // ... trzy kropki, SPREAD OPERATOR, rozpakowywuje obiekt lub tablice
+          {
+            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+            title,
+            icon: 'list-alt',
+            cards: []
+          }
+        ]
+      }
+    ));
+  }
+
   render() {
     return (
       <section className={styles.component}>
@@ -32,6 +49,9 @@ class List extends React.Component {  // dziedziczy ona z klasy React.Component
           {this.state.columns.map(({key, ...columnProps}) => ( // wykorzystanie wartosci ze stanu, Metoda .map, którą tutaj wykorzystujemy, jest dostępna dla każdej tablicy (array). Służy ona do modyfikacji każdego jej elementu – ale zamiast zmieniać tablicę, na której została wykonana, zwraca nową tablicę ze zmienionymi wartościami.
             <Column key={key} {...columnProps} />
           ))}
+        </div>
+        <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
         </div>
       </section>
     )
