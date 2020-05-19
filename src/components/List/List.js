@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';  // typy wartości w propsach, properties, t
 import Column from '../Column/ColumnContainer.js';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
-//import Creator from '../Creator/Creator.js';
+import Creator from '../Creator/Creator.js';
 
 class List extends React.Component {  // dziedziczy ona z klasy React.Component
   
@@ -15,13 +15,14 @@ class List extends React.Component {  // dziedziczy ona z klasy React.Component
     image: PropTypes.string.isRequired,     // why string?
     description: PropTypes.node,
     columns: PropTypes.array,
+    addColumn: PropTypes.func,
   }
   static defaultProps = {                   // domyslna wartosc wlasciwosci. np kiedy nie zostanie podana zadna zawartosc opisu listy 
     description: settings.defaultListDescription,
   }
 
   render() {
-    const {title, image, description, columns} = this.props;
+    const {title, image, description, columns, addColumn} = this.props;
     return (
       <section className={styles.component}>
         <Hero titleText={title} image={image} />
@@ -33,10 +34,10 @@ class List extends React.Component {  // dziedziczy ona z klasy React.Component
             <Column key={columnData.id} {...columnData} />
           ))}
         </div>
-        {/*
+        
         <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
-        </div>*/}
+          <Creator text={settings.columnCreatorText} action={addColumn}/>
+        </div>
       </section>
     );
   }
