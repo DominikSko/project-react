@@ -62,7 +62,7 @@ export const listData = {
       cards: [
         {
           key: 0,
-          title: 'The Witcher',
+          title: 'GTA V',
         },
         {
           key: 1,
