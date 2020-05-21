@@ -138,7 +138,7 @@ const cards = [
   {
     id: 'card-6',
     columnId: 'column-3',
-    title: 'GTA V',
+    title: 'Planescape: Torment',
   },
 ];
 
