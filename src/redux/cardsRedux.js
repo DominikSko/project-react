@@ -1,7 +1,9 @@
 import shortid from 'shortid';
 
 // selectors
-export const getCardsForColumn = ({cards}, columnId) => cards.filter(card => card.columnId == columnId); // do omówienia
+// Twoim zadaniem jest dodanie drugiego warunku (połączonego operatorem oraz &&), który będzie sprawdzał czy tytuł karty pasuje do wyszukiwanej frazy, czyli: new RegExp(searchString, 'i').test(card.title) 
+// Pamiętaj o uwzględnieniu searchString w destrukturyzacji argumentu funkcji strzałkowej!
+export const getCardsForColumn = ({cards,searchString}, columnId) => cards.filter(card => card.columnId == columnId && new RegExp(searchString, 'i').test(card.title));   // do omówienia
 
 // action name creator
 const reducerName = 'cards';                 // do omówienia
