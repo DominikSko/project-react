@@ -113,22 +113,22 @@ const cards = [
   {
     id: 'card-1',
     columnId: 'column-1',
-    title: 'This Is Going to Hurt',
+    title: 'The Gulag Archipelago',
   },
   {
     id: 'card-2',
     columnId: 'column-1',
-    title: 'Interpreter of Maladies',
+    title: 'ULYSSES',
   },
   {
     id: 'card-3',
     columnId: 'column-2',
-    title: 'Harry Potter',
+    title: 'Pan\'s Labyrinth',
   },
   {
     id: 'card-4',
     columnId: 'column-2',
-    title: 'Star Wars',
+    title: 'Vertigo(1958)',
   },
   {
     id: 'card-5',
@@ -138,7 +138,7 @@ const cards = [
   {
     id: 'card-6',
     columnId: 'column-3',
-    title: 'Skyrim',
+    title: 'GTA V',
   },
 ];
 
