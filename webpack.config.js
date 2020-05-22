@@ -10,7 +10,11 @@ const baseConfig = () => ({
   entry: './src/index.js',  // Właściwość entry wskazuje, w którym pliku JS znajduje się główny kod aplikacji.
   output: {                 // Obiekt output wskazuje miejsce, w którym ma być wygenerowana wersja produkcyjna, stworzona za pomocą komendy npm run build. Jest też odpowiedzialny za nazwę pliku, w którym znajdzie się scalony i skonwertowany kod JS naszej aplikacji.
     path: path.join(__dirname, 'dist'),
+    publicPath: '/', // związane z React Router, to ustawienie wskaże główne miejsce przechowywania assetów przez naszą aplikację. Potrzebujemy tego ustawienia, ponieważ za chwilę nasza aplikacja będzie działała pod adresami, które domyślnie są traktowane jako podkatalogi projektu.
     filename: 'scripts_bundle.js',
+  },
+  devServer: {  // Ustawienie historyApiFallback umożliwi serwowanie pliku index.html, a zarazem naszej aplikacji w sytuacjach, w których serwer zwróciłby błąd 404.
+    historyApiFallback: true,
   },
   module: {                 // Obiekt module zawiera konfigurację dla różnych typów plików – np. dla plików JS czy SCSS.
     rules: [
