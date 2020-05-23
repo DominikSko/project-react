@@ -1,32 +1,19 @@
 import React from 'react';
-import styles from './App.scss';
-import PropTypes from 'prop-types';
-import List from '../List/ListContainer.js';
-import Search from '../Search/SearchContainer.js';
-//import {pageContents, listData} from '../../data/dataStore';
+import Home from '../Home/HomeContainer';
+import Info from '../Info/Info';
+import MainLayout from '../MainLayout/MainLayout.js';
+// podłączenie routingu w App
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-class App extends React.Component {  // dziedziczy ona z klasy React.Component
-  render() {
-    const {lists, title, subtitle} = this.props; // chcemy aby treść była pobierana z propsów komponentu
-    return (
-      <main className={styles.component}>
-        <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.subtitle}>{subtitle}</h2> 
-        <Search />
-        {lists.map(listData => (
-          <List key={listData.id} {...listData} />
-        ))}
-        {/*<List {...listData} /> */} 
-      </main>
-    );
-  }
-  static propTypes = {
-    title: PropTypes.node,
-    subtitle: PropTypes.node,
-    lists: PropTypes.array,
-  }
-}
+const App = () => (
+  <BrowserRouter>
+    <MainLayout>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/info' component={Info} />
+      </Switch>
+    </MainLayout>
+  </BrowserRouter>
+);
 
-// <List {...listData} /> spread operator, który pozwala na rozpakowanie obiektu lub tablicy.
-// nowością jest tylko słowo default. Dzięki niemu, importując App w pliku index.js, możemy pominąć nawiasy klamrowe, czyli nie musimy pisać import {App} from '...';, tak jak do tej pory to robiliśmy.
 export default App;
