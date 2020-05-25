@@ -81,15 +81,21 @@ export const InfoData = {
 
 export const FAQData = {
   title: 'Frequently Asked Questions',
-  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  image: 'https://cdn.searchenginejournal.com/wp-content/uploads/2018/09/25-of-the-Best-Examples-of-Effective-FAQ-Pages.png',
   content: 'faqLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 };
 
 const lists = [
   {
     id: 'list-1',
-    title: 'Things to do <sup>soon!</sup>',
+    title: 'Books, movies and games!',
     description: 'Interesting things I want to check out!',
+    image: 'https://www.verdict.co.uk/wp-content/uploads/2019/12/Great-technology-books-for-Christmas-1440x1120.jpg',
+  },
+  {
+    id: 'list-2',
+    title: 'Things to do <sup>soon!</sup>',
+    description: 'My tasks that I have to remember',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
 ];
@@ -116,8 +122,20 @@ const columns = [
   {
     id: 'column-4',
     listId: 'list-2',
-    title: 'Strange column',
-    icon: 'question',
+    title: 'Most important tasks',
+    icon: 'plane-departure',
+  },
+  {
+    id: 'column-5',
+    listId: 'list-2',
+    title: 'Small tasks - important',
+    icon: 'tasks',
+  },
+  {
+    id: 'column-6',
+    listId: 'list-2',
+    title: 'Tasks - low priority',
+    icon: 'info',
   },
 ];
 

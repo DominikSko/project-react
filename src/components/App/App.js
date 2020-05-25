@@ -6,6 +6,7 @@ import MainLayout from '../MainLayout/MainLayout.js';   // MainLayout tylko zagn
 import {BrowserRouter, /*Switch*/ Route} from 'react-router-dom'; // podłączenie routingu w App
 import {AnimatedSwitch} from 'react-router-transition';  // Animowane zmiany widoku
 import styles from './App.scss';
+import List from '../List/ListContainer';
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/info' component={Info} />
         <Route exact path='/FAQ' component={FAQ} />
+        <Route exact path="/list/:id" component={List} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
