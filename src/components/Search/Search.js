@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 import Container from '../Container/Container.js';
+import { withRouter } from 'react-router';
 
 class Search extends React.Component {
   static propTypes = {
@@ -13,6 +14,7 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
+    history: PropTypes.object,
   }
 
   static defaultProps = {
@@ -30,8 +32,10 @@ class Search extends React.Component {
     });
   }
 
-  handleOK(){
-    this.props.changeSearchString(this.state.value);
+  handleOK() {
+    //this.props.changeSearchString(this.state.value); możesz usunąć this.props.changeSearchString(this.state.value);, 
+    // ponieważ kliknięcie OK po wyszukaniu ma już tylko zmieniać adres strony – zmianą stanu zajmie się komponent SearchResults.
+    this.props.history.push(`/search/${this.state.value}`);
   }
 
   componentDidUpdate(prevProps){
@@ -54,7 +58,9 @@ class Search extends React.Component {
             onChange={event => this.handleChange(event)}
           />
           <div className={styles.buttons}>
-            <Button onClick={() => this.handleOK()}><Icon name={icon} /></Button>
+            <Button onClick={() => this.handleOK()}>
+              <Icon name={icon} />
+            </Button>
           </div>
           <div>
             { countVisible == countAll ? '' : `${countVisible} / ${countAll}` }
@@ -65,4 +71,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
