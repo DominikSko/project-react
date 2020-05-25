@@ -22,7 +22,7 @@ class Search extends React.Component {
   }
 
   state = {
-    value: this.props.searchString,
+    value: this.props.searchString || '',
   }
 
   handleChange(event){

@@ -12,7 +12,7 @@ class Header extends React.Component {
         <Container>
           <div className={styles.wrapper}>
             <Link to='/' className={styles.logo}>
-              <Icon name='robot' />
+              <Icon name='rocket' />
             </Link>
             <Search />
             <nav>

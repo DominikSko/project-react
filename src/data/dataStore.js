@@ -90,7 +90,7 @@ const lists = [
     id: 'list-1',
     title: 'Books, movies and games!',
     description: 'Interesting things I want to check out!',
-    image: 'https://www.verdict.co.uk/wp-content/uploads/2019/12/Great-technology-books-for-Christmas-1440x1120.jpg',
+    image: 'https://wallpaperaccess.com/full/124383.jpg',
   },
   {
     id: 'list-2',
@@ -169,6 +169,21 @@ const cards = [
     id: 'card-6',
     columnId: 'column-3',
     title: 'Planescape: Torment',
+  },
+  {
+    id: 'card-7',
+    columnId: 'column-4',
+    title: 'Learning programming',
+  },
+  {
+    id: 'card-8',
+    columnId: 'column-5',
+    title: 'Barber visit, Monday 17:30',
+  },
+  {
+    id: 'card-9',
+    columnId: 'column-6',
+    title: 'Take out trash!',
   },
 ];
 
