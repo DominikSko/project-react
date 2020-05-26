@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Container = props => (
-  <div className={styles.container}>
+  <div className={styles.component}>
     {props.children}
   </div>
 );
